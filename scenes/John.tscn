@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://citk4g5fcrufg"]
+
+[ext_resource type="Script" path="res://scenes/John.gd" id="1_si25i"]
+[ext_resource type="PackedScene" uid="uid://b1wwjgopufmjk" path="res://camera.tscn" id="2_acssc"]
+[ext_resource type="PackedScene" uid="uid://dc6vnahh3vrf7" path="res://assets/characters/Template.aseprite" id="3_b5xr7"]
+[ext_resource type="PackedScene" uid="uid://buv7ojdka8kar" path="res://assets/objects/Table.gltf" id="3_u05c0"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_si25i")
+
+[node name="Table" parent="." instance=ExtResource("3_u05c0")]
+
+[node name="Camera" parent="." instance=ExtResource("2_acssc")]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.3, 0.25)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, 0.365998, -0.784886, 0, 0.906308, 0.422618, 0.866025, -0.211309, 0.453154, 0, 0, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Template" parent="Control" instance=ExtResource("3_b5xr7")]
+position = Vector2(16, -22)
+frame_progress = 0.796658
