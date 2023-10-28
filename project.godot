@@ -23,12 +23,35 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 layout/styles={
 "Default": {
-"export_overrides": {},
+"export_overrides": {
+"box_size": "Vector2(50, 10)"
+},
 "inherits": "",
+"layout": "res://addons/dialogic/Modules/DefaultLayouts/Default/DialogicDefaultLayout.tscn"
+},
+"New Style": {
+"export_overrides": {},
 "layout": "res://addons/dialogic/Modules/DefaultLayouts/TextBubble/DialogicTextBubbleLayout.tscn"
 }
 }
 layout/default_style="Default"
+variables={}
+text/letter_speed=0.01
+text/skippable=true
+text/skippable_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/join_default_wait=true
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+text/autopauses={}
+glossary/default_case_sensitive=true
 
 [display]
 
