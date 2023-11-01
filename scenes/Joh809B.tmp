@@ -68,7 +68,6 @@ theme = SubResource("Theme_n2trm")
 
 [node name="Template" parent="Control" instance=ExtResource("3_b5xr7")]
 position = Vector2(16, -26)
-frame = 1
-frame_progress = 0.546406
+frame_progress = 0.796658
 
 [node name="Balloon" parent="." instance=ExtResource("6_rn651")]
