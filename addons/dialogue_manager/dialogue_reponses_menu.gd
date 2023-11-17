@@ -14,7 +14,6 @@ signal response_selected(response: DialogueResponse)
 # The list of dialogue responses.
 var _responses: Array = []
 
-
 func _ready() -> void:
 	visibility_changed.connect(func():
 		if visible and get_menu_items().size() > 0:
@@ -87,6 +86,12 @@ func _configure_focus() -> void:
 
 	items[0].grab_focus()
 
+	items[-1].focus_neighbor_bottom = $"../../ExitConvoButton".get_path()
+	items[-1].focus_next = $"../../ExitConvoButton".get_path()
+	
+	$"../../ExitConvoButton".focus_neighbor_top = items[-1].get_path()
+	$"../../ExitConvoButton".focus_previous = items[-1].get_path()
+
 
 ## Get the selectable items in the menu.
 func get_menu_items() -> Array:
@@ -94,9 +99,6 @@ func get_menu_items() -> Array:
 	for child in get_children():
 		if "Disallowed" in child.name: continue
 		items.append(child)
-		print(child)
-		
-	print(items[0])
 
 	return items
 

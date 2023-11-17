@@ -125,5 +125,4 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 func _on_exit_convo_button_pressed():
-	$Balloon/Responses/ResponsesMenu.get_menu_items()
 	next("end")

@@ -1,10 +1,101 @@
-~ this_is_a_node_title
+~ Start
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-Nathan: For more information see the online documentation.
+???: how are you feeling?
+- Good
+	=> Callie
+- Where am I?
+	=> Passifica
+- Uuuugh
+	=> Morgan
+
+=> END
+
+~ Callie
+
+do Global.FadeIn()
+
+Callie: That's great to hear!
+Callie: After you passed out last night,
+Callie: I was extremely worried about you!
+
+=> CallieOptions
+
+~ CallieOptions
+
+- What happened?
+	Callie: You got drunk!
+	Callie: And then you passed out!
+	=> CallieOptions
+- Who are you?
+	Callie: Can't you remember your own daughter?!
+	Callie: That's it, I'm calling the ambulance!
+	=> AmbulanceEnding
+
+=> END
+
+~ Passifica
+
+do Global.FadeIn()
+
+Passifica: In my chair, even though we broke up years ago.
+Passifica: Now get out.
+
+~ PassificaOptions
+
+- What happened?
+	Passifica: I don't know but you're in my fucking chair.
+	=> PassificaOptions
+- Who are you?
+	Passifica: Your ex, now get the fuck out.
+	- *Get out of the chair*
+		=> FallEnding
+	- But who are you?
+		Passifica: What does it matter who I am?
+		Passifica: Get out my fucking bed.
+		=> FallEnding
+
+~ Morgan
+
+Morgan: Yeah that's what I feared, 
+Morgan: You should stop taking random pills people give you.
+Morgan: For crying out loud how can you be this smart yet so stupid?
+
+=> MorganOptions
+
+~ MorganOptions
+
+- Who are you?
+	Morgan: You're assistant, at least I used to be.
+	Morgan: Now how are you?
+	=> MorganOptions
+- I'm fine
+	Morgan: that's a clear lie.
+	Morgan: I'm calling the ambulance.
+	=> AmbulanceEnding
+- Uuuugh
+	Morgan: Okay that dosen't tell me anything.
+	Morgan: Can you get up?
+	- *Get up*
+		=> FallEnding
+	- Uuuugh
+		Morgan: Okay that's what I thought.
+		Morgan: I'm going to call an ambulance.
+		=> AmbulanceEnding
+
+~ AmbulanceEnding
+
+do Global.FadeOut()
+
+Narrator: The ambulance came and tried to help you.
+Narrator: You died by a stroke on the way to the hospital.
+
+=> END
+
+~ FallEnding
+
+do Global.FadeOut()
+
+Narrator: You tried to get up but fell over and knocked your head.
+Narrator: You fell and died.
 
 => END

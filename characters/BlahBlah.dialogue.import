@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://bhmsekvaykkbq"
+path="res://.godot/imported/BlahBlah.dialogue-7cf91bd9e0897f4db50832f873c9dfaa.tres"
+
+[deps]
+
+source_file="res://characters/BlahBlah.dialogue"
+dest_files=["res://.godot/imported/BlahBlah.dialogue-7cf91bd9e0897f4db50832f873c9dfaa.tres"]
+
+[params]
+
+defaults=true
