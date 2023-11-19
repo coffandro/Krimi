@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://citk4g5fcrufg"]
+[gd_scene load_steps=13 format=3 uid="uid://citk4g5fcrufg"]
 
 [ext_resource type="Script" path="res://scenes/John.gd" id="1_si25i"]
 [ext_resource type="PackedScene" uid="uid://b1wwjgopufmjk" path="res://camera.tscn" id="2_acssc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://buv7ojdka8kar" path="res://assets/objects/Table.gltf" id="3_u05c0"]
 [ext_resource type="PackedScene" uid="uid://ha5xpvniykms" path="res://assets/objects/Chair.gltf" id="5_5veq6"]
 [ext_resource type="PackedScene" uid="uid://13s5spsk34qu" path="res://assets/dialogue/small_balloon.tscn" id="6_rn651"]
+[ext_resource type="FontFile" uid="uid://b5qrpot3dinla" path="res://assets/Born2bSportyV2.ttf" id="7_hdp45"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ym4pt"]
 
@@ -13,6 +14,22 @@
 size = Vector2(1, 0.75)
 
 [sub_resource type="Theme" id="Theme_n2trm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7gmx"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kubl1"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_si25i")
@@ -72,3 +89,18 @@ frame = 1
 frame_progress = 0.546406
 
 [node name="Balloon" parent="." instance=ExtResource("6_rn651")]
+
+[node name="ReloadButton" type="Button" parent="Balloon"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 47.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("7_hdp45")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_y7gmx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y7gmx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kubl1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_y7gmx")
+text = "Reload"
+
+[connection signal="pressed" from="Balloon/ReloadButton" to="Balloon" method="_on_reload_button_pressed"]

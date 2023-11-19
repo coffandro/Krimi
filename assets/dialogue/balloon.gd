@@ -126,3 +126,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func _on_exit_convo_button_pressed():
 	next("end")
+
+func _on_reload_button_pressed():
+	Global.FadeOut()
+	get_tree().reload_current_scene()
