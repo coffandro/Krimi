@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://citk4g5fcrufg"]
+[gd_scene load_steps=16 format=3 uid="uid://citk4g5fcrufg"]
 
 [ext_resource type="Script" path="res://scenes/John.gd" id="1_si25i"]
 [ext_resource type="PackedScene" uid="uid://b1wwjgopufmjk" path="res://camera.tscn" id="2_acssc"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ha5xpvniykms" path="res://assets/objects/Chair.gltf" id="5_5veq6"]
 [ext_resource type="PackedScene" uid="uid://13s5spsk34qu" path="res://assets/dialogue/small_balloon.tscn" id="6_rn651"]
 [ext_resource type="FontFile" uid="uid://b5qrpot3dinla" path="res://assets/Born2bSportyV2.ttf" id="7_hdp45"]
+[ext_resource type="Texture2D" uid="uid://div5r1bvi2tea" path="res://assets/2D/BG.aseprite" id="8_vmefq"]
+[ext_resource type="Texture2D" uid="uid://bo37m1b8be48q" path="res://assets/2D/Table.aseprite" id="9_bdiri"]
+[ext_resource type="Texture2D" uid="uid://da84vo3tnrtvi" path="res://assets/2D/Chair.aseprite" id="10_ttnf7"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ym4pt"]
 
@@ -36,37 +39,58 @@ script = ExtResource("1_si25i")
 
 [node name="Table" parent="." instance=ExtResource("3_u05c0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+visible = false
 
 [node name="Chair" parent="." instance=ExtResource("5_5veq6")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.365)
+visible = false
 
 [node name="Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, -0.425)
+visible = false
 mesh = SubResource("QuadMesh_ym4pt")
 skeleton = NodePath("../Floor")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.425)
+visible = false
 mesh = SubResource("QuadMesh_ym4pt")
 
 [node name="WallR" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0.25, -0.425)
+visible = false
 mesh = SubResource("QuadMesh_kwd6k")
 
 [node name="WallL" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0.25, -0.425)
+visible = false
 mesh = SubResource("QuadMesh_kwd6k")
 
 [node name="WallB" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0.25, -0.925)
+visible = false
 mesh = SubResource("QuadMesh_kwd6k")
 skeleton = NodePath("../WallR")
 
 [node name="Camera" parent="." instance=ExtResource("2_acssc")]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.3, 0.25)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, 0.365998, -0.784886, 0, 0.906308, 0.422618, 0.866025, -0.211309, 0.453154, 0, 0, 0)
+visible = false
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(120, 67.5)
+texture = ExtResource("8_vmefq")
+
+[node name="Chair2" type="Sprite2D" parent="."]
+position = Vector2(120, 67.5)
+texture = ExtResource("10_ttnf7")
+
+[node name="Table2" type="Sprite2D" parent="."]
+position = Vector2(120, 67.5)
+texture = ExtResource("9_bdiri")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -76,9 +100,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -16.0
-offset_top = -16.0
+offset_top = -17.0
 offset_right = 16.0
-offset_bottom = 16.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_n2trm")
